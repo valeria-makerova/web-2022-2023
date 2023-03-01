@@ -1,0 +1,62 @@
+.top-block
+{
+    background: hsl(0, 0%, 100%);
+}
+
+.menu__logo
+{
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 26px;
+    color: #2E2E2E;
+}
+
+.menu__item
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+    color: #2E2E2E;
+}
+
+.top-block__title
+{
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 51px;
+    letter-spacing: 2px;
+    color: #2E2E2E;
+}
+
+.top-block__text
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 20px;
+    color: rgba(46, 46, 46, 0.63);
+}
+
+.content__text
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #101315;
+}
+
+.footer-block__menu
+{
+    background: rgba(35, 47, 56, 0.6) url(../images/footer-block.png);
+    height: 89px;
+}
