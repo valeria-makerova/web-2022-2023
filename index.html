@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <div class="top-block">
     <header class="top-block__menu">
       <span class="menu__logo">Escape.</span>
@@ -23,6 +24,7 @@
       <button class="top-block__button">View Latest posts</button>
     </div> 
   </div>
+  
   <div class="submenu">
     <nav>
       <a href="#" class="submenu__item">Nature</a>
@@ -34,10 +36,9 @@
     </nav>
   </div>
  
-  <div class="main-block">
-    <h2 class="main-block__title">Featured Posts</h2>
+  <div class="main">
+    <h2 class="main__title">Featured Posts</h2>
     <section class="featured-post">
-      <img src=images/the_road_ahead.jpg>
       <h3 class="featured-post__title">The Road Ahead</h3>
       <p class="featured-post__subtitle">The road ahead might be paved - it might not be.</p>
       <div class="caption">
@@ -46,8 +47,7 @@
         <span class="caption__text">September 25, 2015</span>
       </div>
     </section>
-    <section>
-      <img src="images/from_top_down.png">
+    <section class="featured-post featured-post_second">
       <h3 class="featured-post__title">From Top Down</h3>
       <p class="featured-post__subtitle">Once a year, go to someplace you've never been before.</p>
       <div class="caption">
@@ -57,61 +57,84 @@
       </div>
     </section>
 
-    <h2 class="main-block__title">Most Recent</h2>
+    <h2 class="main__title">Most Recent</h2>
     
-    <section class="">
+    <section class="recent">
       <img src=images/paraschutes.jpg alt="Still Standing Tall">
-      <div class="">
-        <h3 class="">Still Standing Tall</h3>
-        <p class="">Life begins at the end of your comfort zone.</p>
+      <div class="recent-description">
+        <h3 class="recent-description__title">Still Standing Tall</h3>
+        <p class="recent-description__subtitle">Life begins at the end of your comfort zone.</p>
       </div>
-      <div class="">
-        <img class="" src=images/william_wong.png alt="William Wong">
-        <span class="">William Wong</span>
-        <span class="">September 9/25/2015</span>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/william_wong.png alt="William Wong">
+        <span class="recent-caption__text">William Wong</span>
+        <span class="recent-caption__text">September 9/25/2015</span>
       </div>
     </section>
     
-    <section class="">
+    <section class="recent">
       <img src=images/bridge.jpg alt="Sunny Side Up">
-      <div class="">
-        <h3 class="">Sunny Side Up</h3>
-        <p class="">No place is ever as bad as they tell you it's going to be.</p>
+      <div class="recent-description">
+        <h3 class="recent-description__title">Sunny Side Up</h3>
+        <p class="recent-description__subtitle">No place is ever as bad as they tell you it's going to be.</p>
       </div>
-      <div class="">
-        <img class="" src=images/mat_vogels.png alt="Mat Vogels">
-        <span class="">Mat Vogels</span>
-        <span class="">September 9/25/2015</span>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/mat_vogels.png alt="Mat Vogels">
+        <span class="recent-caption__text">Mat Vogels</span>
+        <span class="recent-caption__text">September 9/25/2015</span>
       </div>
     </section>
     
-    <section>
-        <img src=images/sunset.jpg alt="Water Falls">
-        <h3>Water Falls</h3>
-        <p>We travel not to escape life, but for life not to escape us.</p>
-        <img src=images/mat_vogels.png alt="Mat Vogels">
-        <span>Mat Vogels September 9/25/2015</span>
-      </section>
-      <section>
-        <img src=images/through_the_mist.jpg alt="Through the Mist">
-        <h3>Through the Mist</h3>
-        <p>Travel makes you see what a tiny place you occupy in the world.</p>
-        <img src=images/william_wong.png alt="William Wong">
-        <span>William Wong September 9/25/2015</span>
-      </section>
-      <section>
-        <img src=images/awaken_early.jpg alt="Awaken Early">
-        <h3>Awaken Early</h3>
-        <p>Not all those who wander are lost.</p>
-        <img src=images/mat_vogels.png alt="Mat Vogels">
-        <span>Mat Vogels September 9/25/2015</span>
-      </section>
-      <section>
-        <img src=images/try_it_always.jpg alt="Try It Always">
-        <h3>Try It Always</h3>
-        <p>The world is a book, and those who do not travel read only one page.</p>
-        <img src=images/mat_vogels.png alt="Mat Vogels">
-        <span>Mat Vogels September 9/25/2015</span>
+    <section class="recent">
+      <img src=images/sunset.jpg alt="Water Falls">
+      <div class="recent-description">
+        <h3 class="recent-description__title">Water Falls</h3>
+        <p class="recent-description__subtitle">We travel not to escape life, but for life not to escape us.</p>
+      </div>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/mat_vogels.png alt="Mat Vogels">
+        <span class="recent-caption__text">Mat Vogels September</span>
+        <span class="recent-caption__text">9/25/2015</span>
+      </div>
+    </section>
+
+    <section class="recent">
+      <img src=images/through_the_mist.jpg alt="Through the Mist">
+      <div class="recent-description">
+        <h3 class="recent-description__title">Through the Mist</h3>
+        <p class="recent-description__subtitle">Travel makes you see what a tiny place you occupy in the world.</p>
+      </div>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/william_wong.png alt="William Wong">
+        <span class="recent-caption__text">William Wong</span>
+        <span class="recent-caption__text">September 9/25/2015</span>
+      </div>
+    </section>
+
+    <section class="recent">
+      <img src=images/awaken_early.jpg alt="Awaken Early">
+      <div class="recent-description">
+        <h3 class="recent-description__title">Awaken Early</h3>
+        <p class="recent-description__subtitle">Not all those who wander are lost.</p>
+      </div>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/mat_vogels.png alt="Mat Vogels">
+        <span class="recent-caption__text">Mat Vogels</span>
+        <span class="recent-caption__text">September 9/25/2015</span>
+      </div>
+    </section>
+    
+    <section class="recent">
+      <img src=images/try_it_always.jpg alt="Try It Always">
+      <div class="recent-description">
+        <h3 class="recent-description__title">Try It Always</h3>
+        <p class="recent-description__subtitle">The world is a book, and those who do not travel read only one page.</p>
+      </div>
+      <div class="recent-caption">
+        <img class="recent-caption__autor" src=images/mat_vogels.png alt="Mat Vogels">
+        <span class="recent-caption__text">Mat Vogels</span>
+        <span class="recent-caption__text">September 9/25/2015</span>
+      </div>
       </section>
     </div>
   </div>

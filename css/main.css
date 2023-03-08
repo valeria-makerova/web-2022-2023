@@ -63,7 +63,7 @@
 .submenu
 {
     background: #FFFFFF;
-    height: 65px:
+    height: 65px;
 }
 
 .submenu__item
@@ -76,12 +76,12 @@
     color: #768088; 
 }
 
-.main-block
+.main
 {
     background: #F7F7F7;
 }
 
-.main-block__title
+.main__title
 {
     font-family: 'Oxygen';
     font-style: normal;
@@ -90,6 +90,18 @@
     line-height: 27px;
     letter-spacing: 2px;
     color: #2E2E2E;
+}
+
+.featured-post
+{
+    background: url(../images/the_road_ahead.jpg);
+    background-repeat: no-repeat;
+}
+
+.featured-post_second
+{
+    background: url(../images/from_top_down.png);
+    background-repeat: no-repeat;
 }
 
 .featured-post__title
@@ -122,12 +134,12 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-.description
+.recent-description
 {
-    background: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
-.description__title
+.recent-description__title
 {
     font-family: 'Lora';
     font-style: normal;
@@ -137,7 +149,7 @@
     color: #101315;
 }
 
-.description__subtitle
+.recent-description__subtitle
 {
     font-family: 'Oxygen';
     font-style: normal;
@@ -147,9 +159,19 @@
     color: #7A7A7A;
 }
 
-.recent-post-caption
+.recent-caption
 {
     background: #FCFCFC;
+}
+
+.recent-caption__text
+{
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 35px;
+    color: #999999;
 }
 
 .footer-block__menu
