@@ -137,6 +137,11 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.recent__picture
+{
+    height: 150px;
+}
+
 .recent-description
 {
     background-color: #FFFFFF;
