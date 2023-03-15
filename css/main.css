@@ -33,6 +33,7 @@
     font-size: 50px;
     line-height: 51px;
     letter-spacing: 2px;
+    text-align: center;
     color: #FFFFFF;
 }
 
@@ -43,6 +44,7 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 20px;
+    text-align: center;
     color: rgba(255, 255, 255, 0.63);
 }
 
@@ -90,6 +92,7 @@
     font-size: 20px;
     line-height: 27px;
     letter-spacing: 2px;
+    text-align: center;
     color: #2E2E2E;
 }
 
@@ -137,14 +140,15 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-.recent__picture
+.recent
 {
-    height: 150px;
+    background-color: #FFFFFF;
+    height: 291px;
+    width: 296px;
 }
 
 .recent-description
 {
-    background-color: #FFFFFF;
     height: 93px;
     width: 296px;
 }
@@ -155,7 +159,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 21px;
     color: #101315;
 }
 
@@ -174,6 +177,7 @@
     background: #FCFCFC;
     width: 296px;
     height: 48px;
+    border-top: 1px solid #EFEFEF;
 }
 
 .recent-caption__text
