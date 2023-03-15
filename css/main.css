@@ -1,6 +1,7 @@
 .top-block
 {
-    background: #000000 url(../images/top_block_background.jpg);
+    background: #ffffff url(../images/top_block_background.jpg);
+    background-repeat: no-repeat;
     height: 500px;
 }
 
@@ -10,7 +11,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
-    line-height: 26px;
     color: #FFFFFF;
 }
 
@@ -58,6 +58,7 @@
     width: 167px;
     height: 44px;
     border-radius: 3px;
+    border: none;
 }
 
 .submenu
@@ -96,12 +97,14 @@
 {
     background: url(../images/the_road_ahead.jpg);
     background-repeat: no-repeat;
+    height: 280px;
+    width: 460px;
 }
 
 .featured-post_second
 {
     background: url(../images/from_top_down.png);
-    background-repeat: no-repeat;
+    width: 460px;
 }
 
 .featured-post__title
@@ -134,9 +137,16 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.recent__picture
+{
+    height: 150px;
+}
+
 .recent-description
 {
     background-color: #FFFFFF;
+    height: 93px;
+    width: 296px;
 }
 
 .recent-description__title
@@ -162,6 +172,8 @@
 .recent-caption
 {
     background: #FCFCFC;
+    width: 296px;
+    height: 48px;
 }
 
 .recent-caption__text
@@ -174,8 +186,9 @@
     color: #999999;
 }
 
-.footer-block__menu
+.top-block__menu_footer
 {
     background: rgba(35, 47, 56, 0.6) url(../images/footer-block.png);
+    background-repeat: no-repeat;
     height: 89px;
 }
