@@ -35,7 +35,7 @@
     color: rgb(255, 255, 255);
 }
 
-.top-block__title
+.content__title
 {
     font-family: 'Lora';
     font-style: normal;
@@ -46,7 +46,7 @@
     color: #2E2E2E;
 }
 
-.top-block__text
+.content__subtitle
 {
     font-family: 'Oxygen';
     font-style: normal;
@@ -66,7 +66,7 @@
     color: #101315;
 }
 
-.top-block__menu_footer
+.menu_footer
 {
     background: rgba(35, 47, 56, 0.6) url(../images/footer-block.png);
     height: 89px;
