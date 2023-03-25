@@ -1,15 +1,9 @@
-.top
+.top-block
 {
     background: #ffffff url(../images/top_block_background.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
     height: 500px;
-<<<<<<< HEAD
     width: 100%;
     background-repeat: no-repeat;
-=======
-    position: relative;
->>>>>>> 1c42eb4a5ec2ccd8f87464b40f919eceb53a6a93
 }
 
 .menu__logo
@@ -19,11 +13,7 @@
     font-weight: 400;
     font-size: 26px;
     color: #FFFFFF;
-    position: absolute;
 }
-
-.menu__items
-{}
 
 .menu__item
 {
@@ -41,21 +31,19 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.top__title
+.top-block__title
 {
     font-family: 'Lora';
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
-    height: 51px;
+    line-height: 51px;
     letter-spacing: 2px;
     text-align: center;
     color: #FFFFFF;
-    position: relative;
-
 }
 
-.top__text
+.top-block__text
 {
     font-family: 'Oxygen';
     font-style: normal;
@@ -66,7 +54,7 @@
     color: rgba(255, 255, 255, 0.63);
 }
 
-.top__button
+.top-block__button
 {
     font-family: 'Oxygen';
     font-style: normal;
@@ -79,9 +67,6 @@
     height: 44px;
     border-radius: 3px;
     border: none;
-    position: relative;
-    left: 50%;
-    top: 115px;
 }
 
 .submenu
