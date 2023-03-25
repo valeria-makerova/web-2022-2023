@@ -2,6 +2,8 @@
 {
     background: #ffffff url(../images/top_block_background.jpg);
     height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
 }
 
 .menu__logo
