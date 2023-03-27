@@ -7,14 +7,13 @@
 .top
 {
     background: #ffffff url(../images/top_block_background.jpg);
-    height: 500px;
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
 
-.top__menu
+.menu
 {
     display: flex;
     flex-direction: row;
@@ -24,12 +23,8 @@
 
 .menu__logo
 {
-    font-family: 'Lora';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    color: #FFFFFF;
-    padding: 
+    font: 400 26px "Lora";
+    color: #FFFFFF; 
 }
 
 .menu__items
@@ -43,11 +38,7 @@
 
 .menu__item
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
+    font: 400 12px/1.82 "Oxygen";
     letter-spacing: 0.6px;
     color: #FFFFFF;
     text-decoration: none;
@@ -60,11 +51,8 @@
 
 .top__title
 {
-    font-family: 'Lora';
+    font: 400 50px/1.02 'Lora';
     font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 51px;
     letter-spacing: 2px;
     text-align: center;
     color: #FFFFFF;
@@ -74,11 +62,8 @@
 
 .top__text
 {
-    font-family: 'Oxygen';
+    font: 400 17px/1.18 'Oxygen';
     font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.63);
     margin-top: 0px;
@@ -87,17 +72,15 @@
 
 .top__button
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 20px;
+    font: 400 13px/1.54 'Oxygen';
     color: #FFFFFF;
     background: #DD783F;
     width: 167px;
     height: 44px;
     border-radius: 3px;
     border: none;
+    margin-bottom: 157px;
+    align-self: center;
 }
 
 .submenu
@@ -118,11 +101,7 @@
 
 .submenu__item
 {
-    font-family: 'Lora';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font: 400 14px/1.43 'Lora';
     color: #768088;
     text-decoration: none; 
 }
@@ -132,39 +111,52 @@
     background: #F7F7F7;
 }
 
-.section-title
+.featured
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured__block
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; 
+}
+
+.featured__title
+{
+    font: 400 20px/1.35 'Oxygen';
     letter-spacing: 2px;
     text-align: center;
     color: #2E2E2E;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
-.section-title::after
+.featured__title::after
 {
     content: "";
     display: block;
     width: 188px;
     height: 1px;
     background-color: #DEDEDE;
+    margin-top: 16px;
 }
 
 .featured-post
 {
     background: url(../images/the_road_ahead.jpg);
     background-repeat: no-repeat;
-    height: 280px;
     width: 460px;
 }
 
 .featured-post_second
 {
     background: url(../images/from_top_down.png);
-    width: 460px;
 }
 
 .featured-post__button
@@ -174,102 +166,153 @@
     background: #DD783F;
     border: none;
     border-radius: 3px;
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 13px;
+    font: 400 12px/1.08 'Oxygen';
     color: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .featured-post__title
 {
-    font-family: 'Lora';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 27px;
-    line-height: 30px;
+    font: 400 27px/1.11 'Lora';
     color: #FFFFFF;
+    margin: 157px 0 6px 20px;
+}
+
+.featured-post__title_second
+{
+    margin-top: 111px;
 }
 
 .featured-post__subtitle
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 25px;
+    font: 400 14px/1.79 'Oxygen';
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 0 20px;
+}
+
+.caption
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 12px 20px 15px 20px;
+}
+
+
+.caption__author-name
+{
+    font: 400 12px/2.92 'Oxygen';
+    color: rgba(255, 255, 255, 0.7);
+    flex-grow: 1;
+    padding-left: 16px;
+}
+
+.caption__date
+{
+    font: 400 12px/2.92 'Oxygen';
     color: rgba(255, 255, 255, 0.7);
 }
 
-.caption__text
+.most-recent
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 35px;
-    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.most-recent__title
+{
+    font: 400 20px/1.35 'Oxygen';
+    letter-spacing: 2px;
+    text-align: center;
+    color: #2E2E2E;
+    margin-top: 67px;
+    margin-bottom: 39px;
+}
+
+.most-recent__title::after
+{
+    content: "";
+    display: block;
+    width: 188px;
+    height: 1px;
+    background-color: #DEDEDE;
+    margin-top: 16px;
+}
+
+.recent-block
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 25px;
+    margin-left: 17%;
+    margin-right: 17%;
 }
 
 .recent
 {
     background-color: #FFFFFF;
     width: 296px;
+    display: flex;
+    flex-direction: column;
 }
 
 .recent__picture
 {
     height: 150px;
-    width: 296px;
 }
 
-.recent-description
+.recent__title
 {
-    height: 93px;
-    width: 296px;
-    border-top: 1px solid #e5e5e5;
-}
-
-.recent-description__title
-{
-    font-family: 'Lora';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+    font: 400 16px/1.31 'Lora';
     color: #101315;
+    margin: 14px 0 6px 13px;
 }
 
-.recent-description__subtitle
+.recent__subtitle
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 19px;
+    font: 400 13px/1.46 'Oxygen';
     color: #7A7A7A;
+    margin: 0 13px 12px 13px;
+    flex-grow: 1;
 }
 
 .recent-caption
 {
     background: #FCFCFC;
-    width: 296px;
-    height: 48px;
     border-top: 1px solid #EFEFEF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 13px 6px 13px;
 }
 
-.recent-caption__text
+.recent-caption__author-image
 {
-    font-family: 'Oxygen';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 35px;
+
+}
+
+.recent-caption__author-name
+{
+    font: 400 11px/2.92 'Oxygen';
     color: #999999;
+    padding-left: 10px;
+    flex-grow: 1;
+}
+
+.recent-caption__date
+{
+    font: 400 11px/2.92 'Oxygen';
+    color: #999999; 
 }
 
 .menu_footer
 {
-    background: rgba(35, 47, 56, 0.6) url(../images/footer-block.png);
-    height: 89px;
+    background: url(../images/footer-block.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
