@@ -7,7 +7,7 @@
 .top
 {
     background: #ffffff url(../images/top_block_background.jpg);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -304,7 +304,7 @@
 .low
 {
     background: url(../images/form_background.png);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     display: flex;
