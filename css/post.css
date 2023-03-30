@@ -94,7 +94,7 @@
 .low
 {
     background: url(../images/form_background.png);
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     display: flex;

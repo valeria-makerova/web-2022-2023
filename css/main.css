@@ -83,17 +83,10 @@
 
 .submenu
 {
-    background: #FFFFFF;
-    width: 100%;
-    margin: 22px 0 23px 0;
-}
-
-.submenu__items
-{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 286px 0 296px;
+    margin: 22px 286px 23px 296px;
 }
 
 .submenu__item
