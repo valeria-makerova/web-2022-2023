@@ -4,9 +4,13 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type indexPage struct {
+	Title           string
+	Subtitle        string
 	FeaturedPosts   []featuredPostData
 	MostRecentPosts []mostRecentPostData
 }
@@ -19,41 +23,55 @@ type postContentData struct {
 }
 
 type featuredPostData struct {
-	Title       string
-	Subtitle    string
-	Author      string
-	AuthorImg   string
-	PublishData string
-	ImgModifier string
+	Title       string `db:"title"`
+	Subtitle    string `db:"subtitle"`
+	Author      string `db:"author"`
+	AuthorImg   string `db:"author_url"`
+	PublishData string `db:"publish_date"`
+	ImgModifier string `db:"image_url"`
 }
 
 type mostRecentPostData struct {
-	Title       string
-	Subtitle    string
-	Author      string
-	AuthorImg   string
-	PublishData string
-	Image       string
+	Title       string `db:"title"`
+	Subtitle    string `db:"subtitle"`
+	Author      string `db:"author"`
+	AuthorImg   string `db:"author_url"`
+	PublishData string `db:"publish_date"`
+	Image       string `db:"image_url"`
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
-	ts, err := template.ParseFiles("pages/index.html") // Главная страница блога
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
-		log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
-		return                                      // Не забываем завершить выполнение ф-ии
-	}
+func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		posts, err := featuredPosts(db)
+		rposts, err := mostRecent(db)
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err)
+			return // Не забываем завершить выполнение ф-ии
+		}
 
-	data := indexPage{
-		FeaturedPosts:   featuredPosts(),
-		MostRecentPosts: mostRecentPost(),
-	}
+		ts, err := template.ParseFiles("pages/index.html") // Главная страница блога
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err)
+			return // Не забываем завершить выполнение ф-ии
+		}
 
-	err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
-	if err != nil {
-		http.Error(w, "Internal Server Error", 500)
-		log.Println(err.Error())
-		return
+		data := indexPage{
+			Title:           "Blog for traveling",
+			Subtitle:        "My best blog for adventures and burgers",
+			FeaturedPosts:   posts,
+			MostRecentPosts: rposts,
+		}
+
+		err = ts.Execute(w, data) // Заставляем шаблонизатор вывести шаблон в тело ответа
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err)
+			return
+		}
+
+		log.Println("Request completed successfully")
 	}
 }
 
@@ -75,78 +93,54 @@ func post(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func featuredPosts() []featuredPostData {
-	return []featuredPostData{
-		{
-			Title:       "The Road Ahead",
-			Subtitle:    "The road ahead might be paved - it might not be.",
-			Author:      "Mat Vogels",
-			ImgModifier: "featured-post_first",
-			PublishData: "September 25, 2015",
-			AuthorImg:   "/static/images/mat_vogels.png",
-		},
-		{
-			Title:       "From Top Down",
-			Author:      "William Wong",
-			Subtitle:    "Once a year.",
-			ImgModifier: "featured-post_second",
-			PublishData: "September 25, 2015",
-			AuthorImg:   "/static/images/william_wong.png",
-		},
+func featuredPosts(db *sqlx.DB) ([]featuredPostData, error) {
+	const query = `
+	 SELECT
+	  title,
+	  subtitle,
+	  author,
+	  author_url,
+	  publish_date,
+	  image_url,
+	  featured
+	 FROM
+	  post
+	 WHERE featured = 1
+	` // Составляем SQL-запрос для получения записей для секции featured-posts
+
+	var posts []featuredPostData // Заранее объявляем массив с результирующей информацией
+
+	err := db.Select(&posts, query) // Делаем запрос в базу данных
+	if err != nil {                 // Проверяем, что запрос в базу данных не завершился с ошибкой
+		return nil, err
 	}
+
+	return posts, nil
 }
 
-func mostRecentPost() []mostRecentPostData {
-	return []mostRecentPostData{
-		{
-			Title:       "Still Standing Tall",
-			Subtitle:    "Life begins at the end of your comfort zone.",
-			Author:      "William Wong",
-			AuthorImg:   "/static/images/william_wong.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/paraschutes.jpg",
-		},
-		{
-			Title:       "Sunny Side Up",
-			Subtitle:    "No place is ever as bad as they tell you it's going to be.",
-			Author:      "Mat Vogels",
-			AuthorImg:   "/static/images/mat_vogels.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/bridge.jpg",
-		},
-		{
-			Title:       "Water Falls",
-			Subtitle:    "We travel not to escape life, but for life not to escape us.",
-			Author:      "Mat Vogels",
-			AuthorImg:   "/static/images/mat_vogels.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/sunset.jpg",
-		},
-		{
-			Title:       "Through the Mist",
-			Subtitle:    "Travel makes you see what a tiny place you occupy in the world.",
-			Author:      "William Wong",
-			AuthorImg:   "/static/images/william_wong.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/through_the_mist.jpg",
-		},
-		{
-			Title:       "Awaken Early",
-			Subtitle:    "Not all those who wander are lost.",
-			Author:      "Mat Vogels",
-			AuthorImg:   "/static/images/mat_vogels.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/awaken_early.jpg",
-		},
-		{
-			Title:       "Try It Always",
-			Subtitle:    "The world is a book, and those who do not travel read only one page.",
-			Author:      "Mat Vogels",
-			AuthorImg:   "/static/images/mat_vogels.png",
-			PublishData: "9/25/2015",
-			Image:       "/static/images/try_it_always.jpg",
-		},
+func mostRecent(db *sqlx.DB) ([]mostRecentPostData, error) {
+	const query = `
+	 SELECT
+	  title,
+	  subtitle,
+	  author,
+	  author_url,
+	  publish_date,
+	  image_url,
+	  featured
+	 FROM
+	  post
+	 WHERE featured = 0
+	` // Составляем SQL-запрос для получения записей для секции featured-posts
+
+	var rposts []mostRecentPostData // Заранее объявляем массив с результирующей информацией
+
+	err := db.Select(&rposts, query) // Делаем запрос в базу данных
+	if err != nil {                  // Проверяем, что запрос в базу данных не завершился с ошибкой
+		return nil, err
 	}
+
+	return rposts, nil
 }
 
 func postContent() postContentData {
