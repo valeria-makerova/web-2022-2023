@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Escape</title>
-  <link href="css/main.css" rel="stylesheet">
+  <link href="../static/css/main.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body class="page">
@@ -38,26 +38,28 @@
       <h2 class="featured-posts__title">Featured Posts</h2>
       
       <div class="featured-posts__content">
-        <div class="featured-post">
-          <h3 class="featured-post__title">The Road Ahead</h3>
-          <p class="featured-post__subtitle">The road ahead might be paved - it might not be.</p>
+        {{ range .FeaturedPosts }}
+        <div class="featured-post {{ .ImgModifier }}">
+          <h3 class="featured-post__title">{{ .Title }}</h3>
+          <p class="featured-post__subtitle">{{ .Subtitle }}</p>
           <div class="featured-post__caption  caption">
-            <img class="caption__author-image" src=images/mat_vogels.png alt="Mat Vogels">
-            <span class="caption__author-name">Mat Vogels</span>
-            <span class="caption__date">September 25, 2015</span>
+            <img class="caption__author-image" src="{{ .AuthorImg }}"  alt="Mat Vogels">
+            <span class="caption__author-name">{{ .Author }}</span>
+            <span class="caption__date">{{ .PublishData }}</span>
           </div>
         </div>
+        {{ end }}
         
-        <div class="featured-post featured-post_second">
+        <!--<div class="featured-post featured-post_second">
           <button class="featured-post__button">ADVENTURE</button>
           <h3 class="featured-post__title featured-post__title_second">From Top Down</h3>
           <p class="featured-post__subtitle">Once a year, go to someplace you've never been before.</p>
           <div class="featured-post__caption  caption">
-            <img class="caption__author-image" src=images/william_wong.png alt="William Wong">
+            <img class="caption__author-image" src=../static/images/william_wong.png alt="William Wong">
             <span class="caption__author-name">William Wong</span>
             <span class="caption__date">September 25, 2015</span>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -65,71 +67,73 @@
       <h2 class="most-recent__title">Most Recent</h2>
       
       <div class="recent-block">
+        {{ range .MostRecentPosts }}
         <div class="recent">
-          <img class="recent__picture" src=images/paraschutes.jpg alt="Still Standing Tall">
-          <h3 class="recent__title">Still Standing Tall</h3>
-          <p class="recent__subtitle">Life begins at the end of your comfort zone.</p>
+          <img class="recent__picture" src="{{ .Image }}" alt="Still Standing Tall">
+          <h3 class="recent__title">{{ .Title }}</h3>
+          <p class="recent__subtitle">{{ .Subtitle }}</p>
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/william_wong.png alt="William Wong">
-            <span class="recent-caption__author-name">William Wong</span>
-            <span class="recent-caption__date">9/25/2015</span>
+            <img class="recent-caption__author-image" src=" {{ .AuthorImg }}" alt="William Wong">
+            <span class="recent-caption__author-name">{{ .Author }}</span>
+            <span class="recent-caption__date">{{ .PublishData }}</span>
           </div>
         </div>
+        {{ end }}
         
-        <div class="recent">
-          <img class="recent__picture" src=images/bridge.jpg alt="Sunny Side Up">
+        <!--<div class="recent">
+          <img class="recent__picture" src=../static/images/bridge.jpg alt="Sunny Side Up">
           <h3 class="recent__title">Sunny Side Up</h3>
           <p class="recent__subtitle">No place is ever as bad as they tell you it's going to be.</p>
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/mat_vogels.png alt="Mat Vogels">
+            <img class="recent-caption__author-image" src=../static/images/mat_vogels.png alt="Mat Vogels">
             <span class="recent-caption__author-name">Mat Vogels</span>
             <span class="recent-caption__date">9/25/2015</span>
           </div>
         </div>
         
         <div class="recent">
-          <img class="recent__picture" src=images/sunset.jpg alt="Water Falls">
+          <img class="recent__picture" src=../static/images/sunset.jpg alt="Water Falls">
           <h3 class="recent__title">Water Falls</h3>
           <p class="recent__subtitle">We travel not to escape life, but for life not to escape us.</p>
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/mat_vogels.png alt="Mat Vogels">
+            <img class="recent-caption__author-image" src=../static/images/mat_vogels.png alt="Mat Vogels">
             <span class="recent-caption__author-name">Mat Vogels</span>
             <span class="recent-caption__date">9/25/2015</span>
           </div>
         </div>
 
         <div class="recent">
-          <img class="recent__picture" src=images/through_the_mist.jpg alt="Through the Mist">  
+          <img class="recent__picture" src=../static/images/through_the_mist.jpg alt="Through the Mist">  
           <h3 class="recent__title">Through the Mist</h3>
           <p class="recent__subtitle">Travel makes you see what a tiny place you occupy in the world.</p>    
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/william_wong.png alt="William Wong">
+            <img class="recent-caption__author-image" src=../static/images/william_wong.png alt="William Wong">
             <span class="recent-caption__author-name">William Wong</span>
             <span class="recent-caption__date">9/25/2015</span>
           </div>
         </div>
 
         <div class="recent">
-          <img class="recent__picture" src=images/awaken_early.jpg alt="Awaken Early">      
+          <img class="recent__picture" src=../static/images/awaken_early.jpg alt="Awaken Early">      
           <h3 class="recent__title">Awaken Early</h3>
           <p class="recent__subtitle">Not all those who wander are lost.</p>     
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/mat_vogels.png alt="Mat Vogels">
+            <img class="recent-caption__author-image" src=../static/images/mat_vogels.png alt="Mat Vogels">
             <span class="recent-caption__author-name">Mat Vogels</span>
             <span class="recent-caption__date">9/25/2015</span>
           </div>
         </div>
         
         <div class="recent">
-          <img class="recent__picture" src=images/try_it_always.jpg alt="Try It Always">
+          <img class="recent__picture" src=../static/images/try_it_always.jpg alt="Try It Always">
           <h3 class="recent__title">Try It Always</h3>
           <p class="recent__subtitle">The world is a book, and those who do not travel read only one page.</p>
           <div class="recent-caption">
-            <img class="recent-caption__author-image" src=images/mat_vogels.png alt="Mat Vogels">
+            <img class="recent-caption__author-image" src=../static/images/mat_vogels.png alt="Mat Vogels">
             <span class="recent-caption__author-name">Mat Vogels</span>
             <span class="recent-caption__date">9/25/2015</span>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

@@ -139,9 +139,13 @@
 
 .featured-post
 {
-    background: url(../images/the_road_ahead.jpg);
     background-repeat: no-repeat;
     width: 460px;
+}
+
+.featured-post_first
+{
+    background: url(../images/the_road_ahead.jpg);
 }
 
 .featured-post_second
