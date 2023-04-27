@@ -5,6 +5,7 @@ INSERT INTO
         author,
         author_url,
         publish_date,
+        image_url,
         featured
     )
 VALUES (
@@ -21,7 +22,8 @@ INSERT INTO
         subtitle, 
         author,
         author_url, 
-        publish_date, 
+        publish_date,
+        image_url, 
         featured
     )
 VALUES (
@@ -39,7 +41,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Still Standing Tall', 
@@ -47,7 +50,8 @@ VALUES (
     'William Wong',
     '/static/images/william_wong.png', 
     '9/25/2015', 
-    '/static/images/paraschutes.jpg'
+    '/static/images/paraschutes.jpg',
+    0
 );
 INSERT INTO
     post (
@@ -56,7 +60,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Sunny Side Up', 
@@ -64,7 +69,8 @@ VALUES (
     'Mat Vogels',
     '/static/images/mat_vogels.png', 
     '9/25/2015', 
-    '/static/images/bridge.jpg'
+    '/static/images/bridge.jpg',
+    0
 );  
 INSERT INTO
     post (
@@ -73,7 +79,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Water Falls', 
@@ -82,7 +89,8 @@ VALUES (
     'Mat Vogels',
     '/static/images/mat_vogels.png', 
     '9/25/2015', 
-    '/static/images/sunset.jpg'
+    '/static/images/sunset.jpg',
+    0
 );
 INSERT INTO
     post (
@@ -91,7 +99,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Through the Mist', 
@@ -99,7 +108,8 @@ VALUES (
     'William Wong',
     '/static/images/william_wong.png', 
     '9/25/2015', 
-    '/static/images/through_the_mist.jpg'
+    '/static/images/through_the_mist.jpg',
+    0
 );
 INSERT INTO
     post (
@@ -108,7 +118,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Awaken Early', 
@@ -116,7 +127,8 @@ VALUES (
     'Mat Vogels',
     '/static/images/mat_vogels.png', 
     '9/25/2015', 
-    '/static/images/awaken_early.jpg'
+    '/static/images/awaken_early.jpg',
+    0
 );
 INSERT INTO
     post (
@@ -125,7 +137,8 @@ INSERT INTO
         author,
         author_url, 
         publish_date, 
-        image_url
+        image_url,
+        featured
     )
 VALUES (
     'Try It Always', 
@@ -133,5 +146,6 @@ VALUES (
     'Mat Vogels',
     '/static/images/mat_vogels.png', 
     '9/25/2015', 
-    '/static/images/try_it_always.jpg'
+    '/static/images/try_it_always.jpg',
+    0
 );
