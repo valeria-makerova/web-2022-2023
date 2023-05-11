@@ -38,8 +38,8 @@
       <h2 class="featured-posts__title">Featured Posts</h2>
       <div class="featured-posts__content">
         {{ range .FeaturedPosts }}  
-        <div class="featured-post {{ .Image }}" >
-          <h3 class="featured-post__title">{{ .Title }}</h3>
+        <div class="featured-post {{ .ImageFeaturedPost }}" >
+          <a class="featured-post__title" href="/post/{{ .PostID }}">{{ .Title }}</a>
           <p class="featured-post__subtitle">{{ .Subtitle }}</p>
           <div class="featured-post__caption  caption">
             <img class="caption__author-image" src="{{ .AuthorImg }}"  alt="{{ .Author }}">
@@ -58,7 +58,7 @@
         {{ range .MostRecentPosts }}
         <div class="recent">
           <img class="recent__picture" src="{{ .Image }}" alt="{{ .Title }}">
-          <h3 class="recent__title">{{ .Title }}</h3>
+          <a class="recent__title" href="/post/{{ .PostID}}">{{ .Title }}</a><!--text-decoration:none;-->
           <p class="recent__subtitle">{{ .Subtitle }}</p>
           <div class="recent-caption">
             <img class="recent-caption__author-image" src=" {{ .AuthorImg }}" alt="{{ .Author}}">

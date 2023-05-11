@@ -114,7 +114,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 20px; 
+    column-gap: 20px;
 }
 
 .featured-posts__title
@@ -141,16 +141,21 @@
 {
     background-repeat: no-repeat;
     width: 460px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 .featured-post_first
 {
     background: url(../images/the_road_ahead.jpg);
+    background-size: cover;
 }
 
 .featured-post_second
 {
     background: url(../images/from_top_down.png);
+    background-size: cover;
 }
 
 .featured-post__button
@@ -171,6 +176,7 @@
     font: 400 27px/1.11 'Lora';
     color: #FFFFFF;
     margin: 157px 0 6px 20px;
+    text-decoration: none;
 }
 
 .featured-post__title_second
@@ -264,6 +270,7 @@
     font: 400 16px/1.31 'Lora';
     color: #101315;
     margin: 14px 0 6px 13px;
+    text-decoration: none;
 }
 
 .recent__subtitle

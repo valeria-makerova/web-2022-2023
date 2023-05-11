@@ -1,5 +1,5 @@
 CREATE TABLE post(
-	`id` INT AUTO_INCREMENT,
+	`post_id` INT AUTO_INCREMENT,
 	`title` VARCHAR(255),
 	`subtitle` VARCHAR(255),
 	`author` VARCHAR(255),
@@ -7,6 +7,8 @@ CREATE TABLE post(
 	`publish_date` VARCHAR(255),
 	`image_url` VARCHAR(255),
 	`featured` TINYINT(1) DEFAULT 0,
+	`content` TEXT NOT NULL,
+	`image_url_featured_post` VARCHAR(255),
 	PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
 CHARACTER SET = utf8

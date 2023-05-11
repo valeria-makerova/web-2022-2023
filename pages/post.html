@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>theroadahead</title>
+  <title>{{ .Title}}</title>
   <link href="../static/css/post.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -20,9 +20,9 @@
   <div class="content">
     <h1 class="content__title">{{ .Title }}</h1>
     <p class="content__subtitle">{{ .Subtitle }}</p>
-    <img class="content__image" src="{{ .PostImg }}" alt="Northern lights">
+    <img class="content__image" src="{{ .PostImg }}" alt="{{ .Title }}">
     <div class="content-text">
-      <p class="content-text__text">{{ .PostText }}</p>
+      <p class="content-text__text">{{ .Content }}</p>
     </div>
   </div>
 
