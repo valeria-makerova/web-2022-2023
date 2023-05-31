@@ -108,21 +108,21 @@ func post(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 
-			http.Error(w, "Internal Server Error1", 500)
+			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
 			return
 		}
 
 		ts, err := template.ParseFiles("pages/post.html") // Главная страница блога
 		if err != nil {
-			http.Error(w, "Internal Server Error2", 500) // В случае ошибки парсинга - возвращаем 500
-			log.Println(err.Error())                     // Используем стандартный логгер для вывода ошбики в консоль
-			return                                       // Не забываем завершить выполнение ф-ии
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err.Error())                    // Используем стандартный логгер для вывода ошбики в консоль
+			return                                      // Не забываем завершить выполнение ф-ии
 		}
 
 		err = ts.Execute(w, post) // Заставляем шаблонизатор вывести шаблон в тело ответа
 		if err != nil {
-			http.Error(w, "Internal Server Error3", 500)
+			http.Error(w, "Internal Server Error", 500)
 			log.Println(err)
 			return
 		}

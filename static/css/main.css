@@ -23,7 +23,8 @@
 .menu__logo
 {
     font: 400 26px "Lora";
-    color: #FFFFFF; 
+    color: #FFFFFF;
+    text-decoration: none; 
 }
 
 .menu__items
